@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root {
+  --background: 248 249 252;
+  --foreground: 8 14 33;
+  --accent: 74 94 255;
+  --accent-secondary: 0 210 173;
+  --surface: 255 255 255;
+  --radius-lg: 28px;
+}
+
+@theme inline {
+  --color-background: rgb(var(--background));
+  --color-foreground: rgb(var(--foreground));
+  --color-accent: rgb(var(--accent));
+  --color-accent-secondary: rgb(var(--accent-secondary));
+  --color-surface: rgb(var(--surface));
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: radial-gradient(
+      circle at 20% -10%,
+      rgba(74, 94, 255, 0.18),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 80% 0%,
+      rgba(0, 210, 173, 0.18),
+      transparent 38%
+    ),
+    rgb(var(--background));
+  color: rgb(var(--foreground));
+  font-family: var(--font-geist-sans);
+  min-height: 100vh;
+}
+
+.glass-surface {
+  background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.85),
+      rgba(255, 255, 255, 0.65)
+    );
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.08),
+    0 20px 45px rgba(15, 23, 42, 0.12);
+  backdrop-filter: blur(18px);
+}
+
+.pill {
+  border-radius: 999px;
+}
